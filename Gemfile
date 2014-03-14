@@ -42,4 +42,11 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl'
+end
