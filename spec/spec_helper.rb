@@ -13,6 +13,9 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+# Fix factories location for rails 4.0
+FactoryGirl.definition_file_paths = ["spec/factories"]
+FactoryGirl.find_definitions
 
 RSpec.configure do |config|
   config.before(:suite) do
