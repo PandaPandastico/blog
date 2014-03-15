@@ -2,7 +2,7 @@
 require "spec_helper"
 
 describe "Create post" do
-  it "should be succes" do
+  it "to database should be succes" do
     page.driver.browser.basic_authorize('dhh', 'secret')
     visit new_post_path
     fill_in "post_title", with: "Cucamonga"
