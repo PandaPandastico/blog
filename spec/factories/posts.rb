@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    title "Testeando"
-    text "Esto es una prueba y tal."
+    title "Testing"
+    text "This is a test of the page."
   end
 end
