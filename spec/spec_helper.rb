@@ -20,11 +20,12 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
 
-      example.run
-    end
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 
   config.include FactoryGirl::Syntax::Methods
