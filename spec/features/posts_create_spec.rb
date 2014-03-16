@@ -10,6 +10,11 @@ describe "Create post" do
     find("input[type='submit']").click
     Post.where(title: "Cucamonga").count.should == 1
   end
+  it "to database should not be succes" do
+    page.driver.browser.basic_authorize('fake', 'test')
+    visit new_post_path
+    page.should have_no_css('h2')
+  end
   it "should validate title and text length" do
     page.driver.browser.basic_authorize('dhh', 'secret')
     visit new_post_path
