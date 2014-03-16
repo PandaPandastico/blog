@@ -4,7 +4,7 @@ describe "Update post" do
   it "to database should be succes" do
     post = create(:post, title: "Test update")
     page.driver.browser.basic_authorize('dhh', 'secret')
-    visit new_post_path
+    visit edit_post_path(post)
     fill_in "post_title", with: "Cucamonga"
     fill_in "post_text", with: "uCBHYTgygutddldffoadsoi"
     find("input[type='submit']").click
